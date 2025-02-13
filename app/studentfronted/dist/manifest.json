@@ -3,7 +3,12 @@
   "sap.app": {
     "id": "ns.studentfronted",
     "type": "application",
-    "i18n": "i18n/i18n.properties",
+    "i18n": {
+      "bundleUrl": "i18n/i18n.properties",
+      "supportedLocales": [
+        ""
+      ]
+    },
     "applicationVersion": {
       "version": "0.0.1"
     },
@@ -17,7 +22,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/trainingproject-srv/",
+        "uri": "odata/v4/trainingproject-srv/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -72,7 +77,10 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "ns.studentfronted.i18n.i18n"
+          "bundleName": "ns.studentfronted.i18n.i18n",
+          "supportedLocales": [
+            ""
+          ]
         }
       },
       "": {

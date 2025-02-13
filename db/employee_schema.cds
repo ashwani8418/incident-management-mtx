@@ -1,10 +1,10 @@
-using { managed } from '@sap/cds/common';
+using { cuid,managed } from '@sap/cds/common';
 
 
 namespace trainingprojectdb;
 
-entity studentsRecord : managed{
-    key ID : Integer @Core.Computed;
+entity studentsRecord : cuid,
+ managed{
     firstName : String(15);
     lastName : String(15);
     email : String(30);
