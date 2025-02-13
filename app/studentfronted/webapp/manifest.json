@@ -1,0 +1,114 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "ns.studentfronted",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.16.3",
+      "toolsId": "da441477-c499-4e55-8957-62ce8b1fc11f"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/trainingproject-srv/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.132.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ns.studentfronted.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ns.studentfronted.view"
+      },
+      "routes": [
+        {
+          "name": "RouteStudentRecord",
+          "pattern": ":?query:",
+          "target": [
+            "TargetStudentRecord"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetStudentRecord": {
+          "id": "StudentRecord",
+          "name": "StudentRecord"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ns.studentfronted.view.App",
+      "type": "XML",
+      "id": "App"
+    }
+  }
+}
