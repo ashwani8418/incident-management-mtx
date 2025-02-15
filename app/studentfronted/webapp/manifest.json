@@ -126,6 +126,6 @@
   },
   "sap.cloud": {
     "public": true,
-    "service": "incidents"
+    "service": "incidents.cdm"
   }
 }

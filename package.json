@@ -8,6 +8,7 @@
   "dependencies": {
     "@cap-js/hana": "^1.6.1",
     "@sap/cds": "^8.7.1",
+    "@sap/cds-mtxs": "^2.5.1",
     "@sap/xssec": "^4.3.0",
     "express": "^4.21.2",
     "glob": "^11.0.1"
@@ -34,9 +35,40 @@
       "index": true
     },
     "requires": {
+      "[development]": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "alice": {
+              "tenant": "t1",
+              "password": "alice",
+              "roles": [
+                "support"
+              ]
+            },
+            "bob": {
+              "roles": [
+                "support"
+              ]
+            },
+            "erin": {
+              "tenant": "t2",
+              "password": "erin",
+              "roles": [
+                "support"
+              ]
+            }
+          }
+        }
+      },
       "[production]": {
-        "auth": "xsuaa"
+        "auth": "xsuaa",
+        "multitenancy": true
+      },
+      "[local-multitenancy]": {
+        "multitenancy": true
       }
-    }
+    },
+    "profile": "with-mtx-sidecar"
   }
 }
