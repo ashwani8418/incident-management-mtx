@@ -15,11 +15,12 @@
     "start": "cds-serve"
   },
   "cds": {
-    "profile": "mtx-sidecar",
-    "requires": {
-      "server": {
+    "server": {
         "index": true
       },
+    "profile": "mtx-sidecar",
+    "requires": {
+      
       "html5-host": {
         "vcap": {
           "label": "html5-apps-repo",

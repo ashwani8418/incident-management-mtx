@@ -62,7 +62,7 @@
         }
       },
       "[production]": {
-        "auth": "xsuaa",
+        "auth": "dummy",
         "multitenancy": true
       },
       "[local-multitenancy]": {

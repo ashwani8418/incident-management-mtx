@@ -46,7 +46,9 @@ modules:
             - Name: incident-management_cdm
               ServiceInstanceName: incidents-html5-app-runtime-service
               ServiceKeyName: incidents-html5-app-runtime-service-key
-              URL: https://html5-apps-repo-rt.${default-domain}/applications/cdm/incidents.cdm
+              URL: https://html5-apps-repo-rt.${default-domain}/applications/cdm/incidents
+              HTML5.DynamicDestination: true
+              HTML5.ContentProvider: true
           existing_destinations_policy: ignore
     build-parameters:
       no-source: true
